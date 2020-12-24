@@ -8,10 +8,7 @@ package github.hmasum18.carshowroombackend.server;
 
 import github.hmasum18.carshowroombackend.controller.CarController;
 import github.hmasum18.carshowroombackend.controller.UserController;
-import github.hmasum18.carshowroombackend.model.Car;
-import github.hmasum18.carshowroombackend.model.LoginInfo;
-import github.hmasum18.carshowroombackend.model.Meta;
-import github.hmasum18.carshowroombackend.model.UserInfo;
+import github.hmasum18.carshowroombackend.model.*;
 
 import java.util.List;
 
@@ -71,6 +68,17 @@ public class RequestManger {
                     System.out.println(TAG + " checking if the received login data is valid");
                     handleUserLogin();
                     break;
+                case ALL_CLIENT_INFO:
+                    UserInfo userInfo = ClientManager.getInstance().getUserInfo(clientHolder.getClientName());
+                    if(userInfo.getRole() == LoginInfo.Role.ADMIN){
+                        if(meta.getRequestType()== Meta.RequestType.GET){
+                            ResponseBuilder responseBuilder = new ResponseBuilder();
+                            //responseBuilder.setData(ClientManager.getInstance().getAllAuthenticatedClientInfo());
+                        }
+                    }else{
+                        System.out.println(TAG+clientHolder.getClientName()+ " is not an admin to send the client info list");
+                    }
+                    break;
             }
         else {
             System.out.println(TAG + " received data is not valid");
@@ -97,6 +105,12 @@ public class RequestManger {
             responseBuilder.setMeta(meta);
             //send it to client
             clientHolder.sendResponse(responseBuilder);
+
+            //add client info to client Manager for admin
+            ClientInfo clientInfo = new ClientInfo();
+            clientInfo.setClientIpPort(clientHolder.getClientName());
+            clientInfo.setUserInfo(userInfo);
+            ClientManager.getInstance().addClientInfo(clientHolder.getClientName(),clientInfo);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(TAG + " handleUserLogin() :  " + "user doesn't exist");
@@ -167,8 +181,12 @@ public class RequestManger {
     private void addNewCar() {
         try {
             System.out.println(TAG+"addNewCar(): adding new car to database requested by <= "+clientHolder.getClientName());
-            carController.addCar(requestParser.getCar());
-            notifyClients();
+            if(carController.addCar(requestParser.getCar())){
+                notifyClients();
+            }else{
+                sendErrorResponse(Meta.Status.FAILED);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -179,8 +197,10 @@ public class RequestManger {
         try {
             //update database
             System.out.println(TAG+"updateCar(): updating car to database requested by <= "+clientHolder.getClientName());
-            carController.updateCar(requestParser.getCar());
-            notifyClients();
+            if(carController.updateCar(requestParser.getCar()))
+                notifyClients();
+            else
+                sendErrorResponse(Meta.Status.FAILED);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -191,8 +211,10 @@ public class RequestManger {
         try {
             //delete from data base
             System.out.println(TAG+"deleteCar(): deleting car from database requested by <= "+clientHolder.getClientName());
-            carController.deleteByCarReg(requestParser.getCar().getRegistration());
-            notifyClients();
+            if(carController.deleteByCarReg(requestParser.getCar().getRegistration()) )
+                notifyClients();
+            else
+                sendErrorResponse(Meta.Status.FAILED);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -30,16 +30,13 @@ public class Meta {
         USER_INFO,
         CAR,
         CAR_LIST,
-        IMAGE,
-        FILE,
+        ALL_CLIENT_INFO, //for admin only
         NONE; //for server
     }
 
-    //this for server only
-    //this for server only
-    //server will send the status of the request made by the client
     public enum Status {
         OK,
+        FAILED,
         CREATED,
         ACCEPTED,
         NOT_FOUND,

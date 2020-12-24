@@ -2,14 +2,12 @@ package github.hmasum18.carshowroomfrontend.view.controller;
 
 import github.hmasum18.carshowroomfrontend.carshowroom.Meta;
 import github.hmasum18.carshowroomfrontend.model.CarImageHolder;
-import github.hmasum18.carshowroomfrontend.repository.DataChangeInfo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import res.R;
 
-import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

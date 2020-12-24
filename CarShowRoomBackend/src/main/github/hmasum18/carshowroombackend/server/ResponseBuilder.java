@@ -33,7 +33,7 @@ public class ResponseBuilder {
         this.data = data;
     }
 
-    public void setData(UserInfo userInfo) {
+    /*public void setData(UserInfo userInfo) {
         this.data = gson.toJson(userInfo);
     }
 
@@ -43,12 +43,16 @@ public class ResponseBuilder {
 
     public void setData(Car car) {
         this.data = gson.toJson(car);
-    }
+    }*/
 
-    public void setData(List<Car> carList){
-        JsonArray jsonArray = (JsonArray) gson.toJsonTree(carList, new TypeToken<ArrayList<Car>>() {
-        }.getType());
-        this.data = gson.toJson(jsonArray);
+    public void setData(Object object){
+       /* if(object instanceof List){
+            JsonArray jsonArray = (JsonArray) gson.toJsonTree(object, new TypeToken<ArrayList<Object>>() {
+            }.getType());
+            this.data = gson.toJson(jsonArray);
+        }else{*/
+            this.data = gson.toJson(object);
+        //}
     }
 
     public String getMeta() {

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="mPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="github.hmasum18.carshowroomfrontend.view.controller.CarDataManipulationController">
+<AnchorPane fx:id="mPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="github.hmasum18.carshowroomfrontend.view.controller.CarDataManipulationController">
     <children>
         <BorderPane prefHeight="300.0">
          <center>
@@ -19,9 +14,18 @@
                     <children>
                         <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <JFXTextField fx:id="mCarMakeTF" labelFloat="true" prefHeight="15.0" prefWidth="86.0" promptText="Car Make" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="12.0" />
-                                <JFXTextField fx:id="mCarModelTF" labelFloat="true" layoutX="105.0" layoutY="5.0" prefHeight="26.0" prefWidth="140.0" promptText="Model" AnchorPane.topAnchor="12.0" />
-                                <JFXTextField fx:id="mCarRegTF" labelFloat="true" layoutX="254.0" layoutY="6.0" prefHeight="15.0" prefWidth="86.0" promptText="Registration" AnchorPane.topAnchor="12.0" />
+                                <JFXTextField fx:id="mCarMakeTF" labelFloat="true" prefHeight="15.0" prefWidth="86.0" promptText="Car Make" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="12.0">
+                           <font>
+                              <Font name="Comic Sans MS" size="12.0" />
+                           </font></JFXTextField>
+                                <JFXTextField fx:id="mCarModelTF" labelFloat="true" layoutX="105.0" layoutY="5.0" prefHeight="26.0" prefWidth="140.0" promptText="Model" AnchorPane.topAnchor="12.0">
+                           <font>
+                              <Font name="Comic Sans MS" size="12.0" />
+                           </font></JFXTextField>
+                                <JFXTextField fx:id="mCarRegTF" labelFloat="true" layoutX="254.0" layoutY="6.0" prefHeight="15.0" prefWidth="86.0" promptText="Registration" AnchorPane.topAnchor="12.0">
+                           <font>
+                              <Font name="Comic Sans MS" size="12.0" />
+                           </font></JFXTextField>
                                 <FlowPane hgap="5.0" orientation="VERTICAL" prefWidth="400.0" prefWrapLength="300.0" vgap="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0">
                                     <children>
                                         <AnchorPane layoutX="10.0" layoutY="10.0" prefWidth="200.0">
@@ -31,7 +35,10 @@
                                                         <Image url="@../image/toolbox.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mYearMadeTF" labelFloat="true" prefWidth="86.0" promptText="Year made" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="12.0" />
+                                                <JFXTextField fx:id="mYearMadeTF" labelFloat="true" prefWidth="86.0" promptText="Year made" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="12.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane>
@@ -41,7 +48,10 @@
                                                         <Image url="@../image/car-engine.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mEngineSizeTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Engine size" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXTextField fx:id="mEngineSizeTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Engine size" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="10.0" layoutY="66.0">
@@ -51,7 +61,7 @@
                                                         <Image url="@../image/gear.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXComboBox fx:id="mTransmissionCB" promptText="Transmission" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXComboBox fx:id="mTransmissionCB" labelFloat="true" promptText="Transmission" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="10.0" layoutY="104.0">
@@ -61,7 +71,10 @@
                                                         <Image url="@../image/fuel_1.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mFuelTF" labelFloat="true" layoutX="45.0" layoutY="10.0" prefHeight="18.0" prefWidth="86.0" promptText="Fuel" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXTextField fx:id="mFuelTF" labelFloat="true" layoutX="45.0" layoutY="10.0" prefHeight="18.0" prefWidth="86.0" promptText="Fuel" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="10.0" layoutY="156.0">
@@ -71,7 +84,10 @@
                                                         <Image url="@../image/seat-belt.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mSeatTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Seat" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXTextField fx:id="mSeatTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Seat" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="10.0" layoutY="138.0" prefWidth="200.0">
@@ -81,7 +97,10 @@
                                                         <Image url="@../image/colour.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mColorTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Color" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="12.0" />
+                                                <JFXTextField fx:id="mColorTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Color" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="12.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="256.0" layoutY="10.0" prefWidth="200.0">
@@ -91,7 +110,10 @@
                                                         <Image url="@../image/price-tag.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mPriceTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Price" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXTextField fx:id="mPriceTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="Price" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="256.0" layoutY="53.0" prefWidth="200.0">
@@ -101,7 +123,7 @@
                                                         <Image url="@../image/payment-method.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXComboBox fx:id="mPaymentCB" promptText="Payment method" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXComboBox fx:id="mPaymentCB" labelFloat="true" promptText="Payment method" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane prefWidth="200.0">
@@ -111,7 +133,10 @@
                                                         <Image url="@../image/warehouse.png" />
                                                     </image>
                                                 </ImageView>
-                                                <JFXTextField fx:id="mStockTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="In stock" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                <JFXTextField fx:id="mStockTF" labelFloat="true" prefHeight="18.0" prefWidth="86.0" promptText="In stock" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="12.0" />
+                                       </font></JFXTextField>
                                             </children>
                                         </AnchorPane>
                                     </children>

@@ -44,11 +44,17 @@ public class CarTableDao{
                 statement.setString(7,car.getTransmission());
                 statement.setString(8,car.getFuelType());
                 statement.setInt(9,car.getSeatNumber());
-                statement.setInt(10,car.getQuantity());
-                statement.setInt(11,car.getPrice());
+                statement.setInt(10,car.getPrice());
+                statement.setInt(11,car.getQuantity());
                 statement.setString(12,car.getImageName());
 
                 statement.executeUpdate();
+
+                System.out.println(TAG+" insert: saving new image file.");
+                if(car.getImageDataBytes()!=null&&R.image.storeImage(car.getImageName(),car.getImageDataBytes()))
+                    System.out.println(TAG+" stored new image file successfully.");
+                else
+                    System.out.println(TAG+" error saving new image file.");
             } catch (SQLException e) {
                 e.printStackTrace();
                 return false;
@@ -78,6 +84,7 @@ public class CarTableDao{
                     "quantity = ?,"+ //10
                     "imageUrl = ? "+ //11
                     "WHERE registration=?"; //12
+            int updatedIdx = -1;
             try(PreparedStatement statement = dbConnection.prepareStatement(query)) {
                 //set
                 statement.setString(1,car.getModel());
@@ -94,11 +101,11 @@ public class CarTableDao{
                 //where
                 statement.setString(12,car.getRegistration());
 
-                statement.executeUpdate();
+                updatedIdx = statement.executeUpdate();
                 System.out.println(TAG+" update: car data updated successfully");
 
                 System.out.println(TAG+" update: saving new image file.");
-                if(R.image.storeImage(car.getImageName(),car.getImageDataBytes()))
+                if(car.getImageDataBytes()!=null&&R.image.storeImage(car.getImageName(),car.getImageDataBytes()))
                     System.out.println(TAG+" stored new image file successfully.");
                 else
                     System.out.println(TAG+" error saving new image file.");
@@ -107,7 +114,7 @@ public class CarTableDao{
                 e.printStackTrace();
                 return false;
             }
-            return true;
+            return updatedIdx != -1;
         });
         return future.get();
     }

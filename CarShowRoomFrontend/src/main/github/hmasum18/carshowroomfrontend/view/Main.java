@@ -13,9 +13,6 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    public static ServerListener serverListener;
-    public static ServerHolder serverHolder;
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -24,9 +21,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.getIcons().add(new Image(R.image.getInputStreamByName("icon.png")));
         try {
-            serverHolder = new ServerHolder("127.0.0.1",3333);
+            ServerHolder serverHolder = new ServerHolder("127.0.0.1",3333);
             //start a new listener(a thread)
-            serverListener = new ServerListener(serverHolder);
+            ServerListener serverListener = new ServerListener(serverHolder);
             serverListener.start();
 
             //init view model with server holder
@@ -36,7 +33,6 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //IntentFX intentFX = new IntentFX(primaryStage,"car_list_view.fxml");
         IntentFX intentFX = new IntentFX(primaryStage,"login_screen.fxml");
         try {
             intentFX.startNewScene();

@@ -19,13 +19,18 @@ import java.util.List;
 public class RequestBuilder {
     private String meta;
     private String data;
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     public void setMeta(Meta meta) {
         this.meta = gson.toJson(meta);;
     }
 
-    public void setData(String data) {
+    //not for list
+    public void setData(Object object){
+        this.data = gson.toJson(object);
+    }
+
+    /*public void setData(String data) {
         this.data = data;
     }
 
@@ -46,7 +51,7 @@ public class RequestBuilder {
         }.getType());
         this.data = gson.toJson(jsonArray);
     }
-
+*/
 
     public String getMeta() {
         return meta;

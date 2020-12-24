@@ -1,10 +1,7 @@
 package github.hmasum18.carshowroomfrontend.model;
 
 
-import javafx.scene.image.Image;
-
-import java.io.ByteArrayInputStream;
-import java.util.Arrays;
+import github.hmasum18.carshowroomfrontend.repository.LiveData;
 
 public class Car {
     public static final String TAG = "Car->";
@@ -21,6 +18,12 @@ public class Car {
     private int price; //11
     private String imageName; //12
     private byte[] imageDataBytes;
+
+    //meta
+    /*private long creationTimestamp;
+    private long lastUpdateTimestamp;
+    private String lastUpdaterUserName;*/
+
 
     public Car() {
     }

@@ -13,12 +13,8 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import github.hmasum18.carshowroomfrontend.carshowroom.Meta;
-import github.hmasum18.carshowroomfrontend.carshowroom.ServerHolder;
-import github.hmasum18.carshowroomfrontend.carshowroom.ServerListener;
 import github.hmasum18.carshowroomfrontend.model.LoginInfo;
 import github.hmasum18.carshowroomfrontend.model.UserInfo;
-import github.hmasum18.carshowroomfrontend.repository.DataChangeInfo;
-import github.hmasum18.carshowroomfrontend.view.Main;
 import github.hmasum18.carshowroomfrontend.view.intentFX.IntentFX;
 import github.hmasum18.carshowroomfrontend.view.util.SharedUIComponent;
 import github.hmasum18.carshowroomfrontend.viewModel.ViewModel;

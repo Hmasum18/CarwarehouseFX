@@ -32,6 +32,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import res.R;
 
@@ -204,7 +205,13 @@ public class CarCell extends ListCell<Car> {
         mColorLbl.setText(car.getColor());
         mPriceLbl.setText(car.getPrice() + "$");
         mPaymentLbl.setText("cash/card");
-        mInStockLbl.setText(String.valueOf(car.getQuantity()));
+        if(car.getQuantity()>0){
+            mInStockLbl.setText("In stock"+"["+car.getQuantity()+"]");
+            mInStockLbl.setTextFill(Paint.valueOf("#4caf50"));
+        }else{
+            mInStockLbl.setText("Out of stock");
+            mInStockLbl.setTextFill(Paint.valueOf("#ff0000"));
+        }
     }
 
     private void makePopUpStage(String fxml, Object data, String stageName) throws IOException {

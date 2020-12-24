@@ -22,7 +22,7 @@ public class ResponseParser {
     public static final String TAG = "ResponseParser->";
     private Meta meta;
     private String data;
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     public ResponseParser(String meta, String data) {
         this.meta = gson.fromJson(meta,Meta.class);
@@ -49,18 +49,6 @@ public class ResponseParser {
         return car;
     }
 
-    public String getRegNumOfCarToBeDeleted(){
-        String carReg = null;
-        try{
-            JsonObject jsonObject = (JsonObject) JsonParser.parseString(data);
-            carReg = jsonObject.get("carReg").getAsString();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return carReg;
-    }
-
     public List<Car> getCarList(){
         List<Car> carList = null;
         if(meta.getContentType() == Meta.ContentType.CAR_LIST){
@@ -73,5 +61,9 @@ public class ResponseParser {
                 System.out.println(TAG+" getCarList(): received carList is null");
         }
         return carList;
+    }
+
+    public void getClientInfoList(){
+
     }
 }

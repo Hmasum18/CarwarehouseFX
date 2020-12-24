@@ -9,21 +9,21 @@
 
 <AnchorPane fx:id="mPane" stylesheets="@../css/shared.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="200.0">
+      <BorderPane prefHeight="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <left>
-            <ImageView fx:id="mCarIV" fitHeight="148.0" fitWidth="215.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+            <ImageView fx:id="mCarIV" fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" BorderPane.alignment="CENTER">
                <image>
                   <Image url="@../image/icon.png" />
                </image>
                <BorderPane.margin>
-                  <Insets bottom="15.0" left="15.0" top="15.0" />
+                  <Insets bottom="5.0" left="20.0" top="5.0" />
                </BorderPane.margin>
             </ImageView>
          </left>
          <right>
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label fx:id="mNameLbl" text="Toyota Corola" textFill="#ff5333" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                            <font>
@@ -32,7 +32,7 @@
                         </Label>
                         <FlowPane hgap="5.0" orientation="VERTICAL" prefWidth="400.0" prefWrapLength="300.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
                            <children>
-                              <AnchorPane layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+                              <AnchorPane layoutX="10.0" layoutY="10.0" prefWidth="200.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0">
                                        <image>
@@ -41,13 +41,16 @@
                                     </ImageView>
                                     <Label layoutX="47.0" layoutY="5.0" text="Year Made" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="mYearMadeLbl" graphicTextGap="0.0" layoutX="182.0" layoutY="5.0" text="2020" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                    <Label fx:id="mYearMadeLbl" graphicTextGap="0.0" layoutX="182.0" layoutY="5.0" text="2020" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font></Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane>
+                              <AnchorPane stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0">
                                        <image>
@@ -56,17 +59,17 @@
                                     </ImageView>
                                     <Label fx:id="mEngineSizeLbl" graphicTextGap="0.0" layoutX="182.0" layoutY="5.0" text="1500cc" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="47.0" layoutY="5.0" text="Engine size" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="66.0">
+                              <AnchorPane layoutX="10.0" layoutY="66.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <image>
@@ -75,17 +78,17 @@
                                     </ImageView>
                                     <Label fx:id="mTransmissionLbl" graphicTextGap="0.0" layoutX="188.0" layoutY="4.0" text="Auto" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="49.0" layoutY="3.0" text="Transmission" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="104.0">
+                              <AnchorPane layoutX="10.0" layoutY="104.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <image>
@@ -94,17 +97,17 @@
                                     </ImageView>
                                     <Label fx:id="mFuelLbl" graphicTextGap="0.0" layoutX="185.0" layoutY="4.0" text="Petrol" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="49.0" layoutY="3.0" text="Fuel" AnchorPane.leftAnchor="30.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="156.0">
+                              <AnchorPane layoutX="10.0" layoutY="156.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <image>
@@ -113,17 +116,17 @@
                                     </ImageView>
                                     <Label fx:id="mSeatLbl" graphicTextGap="0.0" layoutX="185.0" layoutY="4.0" text="4" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="49.0" layoutY="3.0" text="Seat" AnchorPane.leftAnchor="30.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="138.0" prefWidth="200.0">
+                              <AnchorPane layoutX="10.0" layoutY="138.0" prefWidth="200.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0">
                                        <image>
@@ -132,17 +135,17 @@
                                     </ImageView>
                                     <Label fx:id="mColorLbl" graphicTextGap="0.0" layoutX="185.0" layoutY="4.0" text="Black" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="49.0" layoutY="3.0" text="Color" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="256.0" layoutY="10.0" prefWidth="200.0">
+                              <AnchorPane layoutX="256.0" layoutY="10.0" prefWidth="200.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0">
                                        <image>
@@ -151,17 +154,17 @@
                                     </ImageView>
                                     <Label fx:id="mPriceLbl" graphicTextGap="0.0" layoutX="185.0" layoutY="4.0" text="555500" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="49.0" layoutY="3.0" text="Price" AnchorPane.leftAnchor="30.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="256.0" layoutY="53.0" prefWidth="200.0">
+                              <AnchorPane layoutX="256.0" layoutY="53.0" prefWidth="200.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <image>
@@ -170,17 +173,17 @@
                                     </ImageView>
                                     <Label fx:id="mPaymentLbl" graphicTextGap="0.0" layoutX="185.0" layoutY="4.0" text="Cash" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS" size="14.0" />
                                        </font>
                                     </Label>
                                     <Label layoutX="49.0" layoutY="3.0" text="Payment" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="256.0" layoutY="96.0" prefWidth="200.0">
+                              <AnchorPane layoutX="256.0" layoutY="96.0" prefWidth="200.0" stylesheets="@../css/shared.css">
                                  <children>
                                     <ImageView fitHeight="18.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <image>
@@ -189,12 +192,12 @@
                                     </ImageView>
                                     <Label fx:id="mInStockLbl" graphicTextGap="0.0" layoutX="185.0" layoutY="4.0" text="5" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="49.0" layoutY="3.0" text="In stock" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                    <Label layoutX="49.0" layoutY="3.0" text="Stock" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Comic Sans MS Bold" size="14.0" />
                                        </font>
                                     </Label>
                                  </children>

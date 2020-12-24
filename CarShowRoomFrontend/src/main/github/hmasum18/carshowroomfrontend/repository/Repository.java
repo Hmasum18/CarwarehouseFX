@@ -6,8 +6,8 @@ import github.hmasum18.carshowroomfrontend.carshowroom.ResponseParser;
 import github.hmasum18.carshowroomfrontend.carshowroom.ServerHolder;
 import github.hmasum18.carshowroomfrontend.model.Car;
 import github.hmasum18.carshowroomfrontend.model.LoginInfo;
+import github.hmasum18.carshowroomfrontend.model.UserInfo;
 import github.hmasum18.carshowroomfrontend.view.controller.ObjectListenable;
-import github.hmasum18.carshowroomfrontend.view.intentFX.SceneManager;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -111,76 +111,56 @@ public class Repository {
         });
     }
 
-  /*  //local changes
-    public void onLocalDataChange(Object object){
-        if(object instanceof  Car){
+    //get response
+    LiveData<UserInfo> userInfoLiveData = new LiveData<>();
+    public LiveData<UserInfo> getUserInfoLiveData() {
+        return userInfoLiveData;
+    }
 
+    LiveData<Car> carLiveData = new LiveData<>();
+    public LiveData<Car> getCarLiveData(){
+        return carLiveData;
+    }
+
+    LiveData<List<Car>> carListLiveData = new LiveData<>();
+    public LiveData<List<Car>> getCarListLiveData() {
+        return carListLiveData;
+    }
+
+    public void onDataReceived(Meta meta, Object object){
+        switch (meta.getStatus()){
+            case OK:
+                handleSuccessResponse(meta);
+                break;
+            case FAILED: //for post,create,delete req
+                handleFailedResponse(meta);
+                break;
+            case NOT_FOUND: //for get request
+                handleNotFoundResponse(meta);
+                break;
         }
     }
 
-
-    public void handleDataManipulation(Object carData) {
-        currentController = SceneManager.getInstance().getCurrentFXMLLoader().getController();
-        System.out.println(TAG + "handleDataManipulation(): handling car data manipulation");
-        switch (responseParser.getMeta().getRequestType()) {
-            case CREATE:
-                notifyViewsDataChangeThroughNetwork((Car) carData,DataChangeType.CREATE);
+    private void handleSuccessResponse(Meta meta){
+        switch (meta.getContentType()){
+            case USER_INFO:
+                userInfoLiveData.postData(responseParser.getUserInfo());
                 break;
-            case UPDATE:
-                notifyViewsDataChangeThroughNetwork((Car) carData,DataChangeType.UPDATE);
+            case CAR:
+                carLiveData.postData(responseParser.getCar());
                 break;
-            case DELETE:
-                notifyViewsDataChangeThroughNetwork((Car) carData,DataChangeType.DELETE);
+            case CAR_LIST:
+                carListLiveData.postData(responseParser.getCarList());
                 break;
         }
-    }*/
-
-/*    public void handleCarListChange(List<Car> carList) {
-        currentController = SceneManager.getInstance().getCurrentFXMLLoader().getController();
-        DataChangeType dataChangeType;
-        ChangeVerdict changeVerdict;
-        DataChanger dataChanger;
-        if (carList != null) {
-            //send to controller
-            dataChangeType = DataChangeType.FETCH;
-            changeVerdict = ChangeVerdict.SUCCESS;
-            dataChanger = DataChanger.SERVER;
-        } else {
-            //send to controller with error
-            dataChangeType = DataChangeType.FETCH;
-            changeVerdict = ChangeVerdict.FAILED;
-            dataChanger = DataChanger.SERVER;
-        }
-        DataChangeInfo dataChangeInfo = new DataChangeInfo(dataChangeType,changeVerdict,dataChanger,ChangedDataType.CAR_LIST);
-        currentController.onObjectReceived(carList,dataChangeInfo);
     }
 
-    private void notifyViewsDataChangeThroughNetwork(Car car, DataChangeType dataChangeType) {
-        System.out.println(TAG + "handleCarCreation(): handling car created.");
-        Meta meta = responseParser.getMeta();
-        ChangeVerdict changeVerdict = ChangeVerdict.FAILED;
-        DataChanger dataChanger = DataChanger.SERVER;
-        if (meta.getStatus() == Meta.Status.OK) {
-            //this client made the car so data is sent null
-            if (car == null) {
-                dataChangeType = DataChangeType.CREATE;
-                changeVerdict = ChangeVerdict.SUCCESS;
-                dataChanger = DataChanger.SELF;
-            } else {
-                dataChangeType = DataChangeType.CREATE;
-                changeVerdict = ChangeVerdict.SUCCESS;
-                dataChanger = DataChanger.OTHER;
-            }
-        } else {
-            if (car == null) {
-                dataChangeType = DataChangeType.CREATE;
-                changeVerdict = ChangeVerdict.FAILED;
-                dataChanger = DataChanger.OTHER;
-            }
-        }
-        DataChangeInfo dataChangeInfo = new DataChangeInfo(dataChangeType,changeVerdict,dataChanger,ChangedDataType.CAR);
-        currentController.onObjectReceived(car,dataChangeInfo);
-    }*/
+    private void handleFailedResponse(Meta meta) {
 
+    }
+
+    private void handleNotFoundResponse(Meta meta) {
+
+    }
 
 }
