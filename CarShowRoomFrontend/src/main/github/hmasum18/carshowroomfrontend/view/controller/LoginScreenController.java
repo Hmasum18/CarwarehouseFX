@@ -126,7 +126,7 @@ public class LoginScreenController implements Initializable, ObjectListenable {
         mLoginBTN.setOnAction(event -> {
             String username = mUsernameTF.getText();
             String password = mPasswordTF.getText();
-            String role = (String) mRoleCB.getValue();
+            String role = mRoleCB.getValue();
             System.out.println(role);
             if(isValid(username,password,role)){
                 //send this data to serve

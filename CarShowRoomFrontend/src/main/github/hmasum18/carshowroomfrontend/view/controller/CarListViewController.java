@@ -3,6 +3,7 @@ package github.hmasum18.carshowroomfrontend.view.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.events.JFXDrawerEvent;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import github.hmasum18.carshowroomfrontend.carshowroom.Meta;
 import github.hmasum18.carshowroomfrontend.model.Car;
@@ -139,12 +140,15 @@ public class CarListViewController implements Initializable, ObjectListenable {
             case "drawerLogoutBtn":
                 node.addEventHandler(MouseEvent.MOUSE_CLICKED,(event)->{
                     System.out.println(TAG + " logging out user");
-                    IntentFX intentFX = new IntentFX(mDrawer, "login_screen.fxml");
+                    IntentFX intentFX = new IntentFX(mDrawer, "login_screen.fxml"
+                            ,IntentFX.SLIDE_DOWN_TO_UP,IntentFX.ANIMATE_CURRENT);
                     try {
                         // Main.serverListener.stopServerListener();
                         mVB.setUserInfo(null);
-                        intentFX.startNewScene();
-                    } catch (IOException e) {
+                        //if(mDrawer.isOpened())
+                           // mDrawer.close();
+                        intentFX.startScene();
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 });

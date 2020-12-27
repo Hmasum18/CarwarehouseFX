@@ -19,14 +19,16 @@ public class SceneManager {
     //fxml src address and its scene
     private final HashMap<String, Scene> sceneHashMap;
     private final HashMap<String, Parent> parentHashMap;
-    private String currentSceneFxmlUrl;
+    private final HashMap<String,FXMLLoader> fxmlLoaderHashMap;
     private FXMLLoader currentFXMLLoader;
+    private String currentSceneFxmlUrl;
     private boolean sceneTransitionAlive;
 
 
     private SceneManager(){
         sceneHashMap = new HashMap<>();
         parentHashMap = new HashMap<>();
+        fxmlLoaderHashMap = new HashMap<>();
     }
 
     public static SceneManager getInstance() {
@@ -54,6 +56,14 @@ public class SceneManager {
 
     public String getCurrentSceneFxmlUrl() {
         return currentSceneFxmlUrl;
+    }
+
+    public void addFXMLLoader(String fxml, FXMLLoader fxmlLoader){
+        fxmlLoaderHashMap.put(fxml,fxmlLoader);
+    }
+
+    public void removeFXMLLoader(String fxml){
+        fxmlLoaderHashMap.remove(fxml);
     }
 
     public void setCurrentSceneFxmlUrl(String currentSceneFxmlUrl) {
@@ -88,7 +98,8 @@ public class SceneManager {
     }
 
     public FXMLLoader getCurrentFXMLLoader(){
-        return currentFXMLLoader;
+        System.out.println(TAG+" getCurrentFXMLLoader(): currentFXML = "+currentSceneFxmlUrl);
+        return fxmlLoaderHashMap.get(currentSceneFxmlUrl);
     }
 
     public void setSceneTransitionAlive(boolean sceneTransitionAlive) {
