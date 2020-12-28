@@ -373,6 +373,7 @@ public class CarDataManipulationController implements Initializable, ObjectListe
         File selectedFile = fileChooser.showOpenDialog(null);
         try {
             lastImageFolder = selectedFile.getAbsolutePath(); //save for later
+            lastImageFolder = lastImageFolder.substring(0,lastImageFolder.lastIndexOf("\\"));
             selectedImageName = selectedFile.getName();
             mCarImagNameTF.setText(selectedImageName);
             System.out.println(TAG + "chooseImageFromFileChooser(): " + lastImageFolder);

@@ -40,7 +40,7 @@
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
                         </ListView>
-                        <JFXButton fx:id="mAddFab" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-background-radius: 50px; -fx-pref-height: 50px; -fx-pref-width: 50px; -fx-border-width: 5px; -fx-border-radius: 50px;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                        <JFXButton fx:id="mAddFab" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-background-radius: 50px; -fx-pref-height: 50px; -fx-pref-width: 50px; -fx-border-width: 5px; -fx-border-radius: 50px;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="50.0">
                             <font>
                                 <Font name="System Bold" size="23.0" />
                             </font>

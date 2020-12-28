@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:G:\level 1 term 2\my 1 2\cse 108 oop lab\java\offlines\offline 3(6)\1805052\CarShowRoomBackend\src\main\res\database\carwarehouse.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:F:\my gihub repositotries\CarwarehouseFX\CarShowRoomBackend\src\main\res\database\carwarehouse.db</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="carwarehouse.db [2]" uuid="27fbbbc6-e687-4bfd-aba6-c853af3f220e">
       <driver-ref>sqlite.xerial</driver-ref>

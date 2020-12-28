@@ -8,14 +8,14 @@
 
 <AnchorPane fx:id="mPane" style="-fx-border-radius: 10;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="190.0">
+      <BorderPane prefHeight="190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <left>
-            <ImageView fx:id="mCarIV" fitHeight="160.0" fitWidth="220.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+            <ImageView fx:id="mCarIV" fitHeight="160.0" fitWidth="240.0" pickOnBounds="true" BorderPane.alignment="CENTER">
                <image>
                   <Image url="@../image/icon.png" />
                </image>
                <BorderPane.margin>
-                  <Insets bottom="15.0" left="15.0" top="15.0" />
+                  <Insets bottom="15.0" left="20.0" top="15.0" />
                </BorderPane.margin>
             </ImageView>
          </left>
@@ -39,7 +39,7 @@
                               <Image url="@../image/delete_512.png" />
                            </image>
                         </ImageView>
-                        <FlowPane hgap="5.0" orientation="VERTICAL" prefWidth="400.0" prefWrapLength="300.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+                        <FlowPane hgap="5.0" orientation="VERTICAL" prefWidth="400.0" prefWrapLength="300.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="45.0">
                            <children>
                               <AnchorPane layoutX="10.0" layoutY="10.0" prefWidth="200.0">
                                  <children>
@@ -216,6 +216,9 @@
                      </children>
                   </AnchorPane>
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </AnchorPane>
          </right>
       </BorderPane>
